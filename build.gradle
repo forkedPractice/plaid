@@ -71,12 +71,6 @@ plugins {
     id 'com.diffplug.gradle.spotless' version '3.26.1'
 }
 
-ext {
-    // query git for the commit count to automate versioning.
-    gitCommitCount = 100 +
-            Integer.parseInt('git rev-list --count HEAD'.execute([], project.rootDir).text.trim())
-}
-
 subprojects {
     buildscript {
         apply from: rootProject.file('repositories.gradle')
